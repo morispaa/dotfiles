@@ -1,6 +1,0 @@
-[submodule "vim/dot-vim/plugged/ale"]
-	path = vim/dot-vim/plugged/ale
-	url = https://github.com/dense-analysis/ale
-[submodule "vim/python-mode"]
-	path = vim/python-mode
-	url = https://github.com/python-mode/python-mode
