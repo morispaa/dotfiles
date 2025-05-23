@@ -79,10 +79,11 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Plugin code goes here.
 call plug#begin('~/.vim/plugged')
-    Plug 'dense-analysis/ale'
+    " Plug 'dense-analysis/ale'
     Plug 'preservim/nerdtree'
-    Plug 'vim-scripts/indentpython.vim'
+    " Plug 'vim-scripts/indentpython.vim'
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    Plug 'spf13/vim-autoclose'
 
 call plug#end()
 
@@ -98,10 +99,11 @@ inoremap jj <esc>
 
 nnoremap <space> :
 
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+" nnoremap <c-j> <c-w>j
+" nnoremap <c-k> <c-w>k
+" nnoremap <c-h> <c-w>h
+" nnoremap <c-l> <c-w>l
+
 
 noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
@@ -188,7 +190,11 @@ if has('gui_running')
 
 endif
 
-au BufNewFile,BufRead *.py
+" Do not autoclose in vim conf files
+let g:autoclose_vim_commentmode = 1
+
+
+" au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ | set softtabstop=4
     \ | set shiftwidth=4
@@ -197,7 +203,7 @@ au BufNewFile,BufRead *.py
     \ | set autoindent
     \ | set fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css
+" au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ | set softtabstop=2
     \ | set shiftwidth=2
